@@ -1,17 +1,14 @@
 {
-  "name": "clicamedic-frontend",
+  "name": "vitacare-frontend",
   "version": "0.1.0",
   "private": true,
-  "husky": {
-    "hooks": {
-      "pre-commit": "make lint && git add -A ."
-    }
-  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "prepare": "husky"
   },
   "dependencies": {
     "husky": "^9.1.7",

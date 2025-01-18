@@ -33,8 +33,7 @@ lint:
 ## fmt: format the project
 .PHONY: fmt
 fmt:
-	pnpm fmt
-
+	pnpm format
 
 ## shell: start a shell in the development container
 .PHONY: shell
@@ -42,3 +41,4 @@ shell:
 	@echo "Starting a shell in the development container..."
 	devbox shell
 
+pre-commit: lint
