@@ -1,0 +1,44 @@
+name: Next.js CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  nextjs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js (latest version)
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'node'  # Esto instalará la última versión estable de Node.js
+
+      - name: Install dependencies
+        run: |
+          pnpm install  # Usa yarn o pnpm si lo prefieres
+
+      - name: Run Prettier check
+        run: |
+          npx prettier --check .  # Verifica si el código está formateado correctamente
+
+      - name: Run ESLint check (opcional)
+        run: |
+          npx eslint . --ext .js,.jsx,.ts,.tsx  # Reemplázalo por la configuración de ESLint que tengas
+
+      - name: Run tests
+        run: |
+          npm test  # Ejecuta las pruebas con Jest u otro framework que uses
+
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
