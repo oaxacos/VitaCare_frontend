@@ -35,6 +35,11 @@ lint:
 fmt:
 	pnpm format
 
+## test: run the tests
+.PHONY: test
+test:
+	pnpm test
+
 ## shell: start a shell in the development container
 .PHONY: shell
 shell:

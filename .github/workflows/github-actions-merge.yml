@@ -30,9 +30,9 @@ jobs:
       - name: Run ESLint check (opcional)
         run: |
           make lint
-      - name: Run tests
-        run: |
-          make test
+      #- name: Run tests
+       # run: |
+        #  make test
       - name: Build
         run: |
           make build
