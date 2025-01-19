@@ -10,9 +10,9 @@ help:
 dev:
 	pnpm dev
 
-## init: initialize the project
-.PHONY: init
-init:
+## install: install the project dependencies
+.PHONY: install
+install:
 	pnpm install
 
 ## build: build the project
@@ -34,6 +34,11 @@ lint:
 .PHONY: fmt
 fmt:
 	pnpm format
+
+## test: run the tests
+.PHONY: test
+test:
+	pnpm test
 
 ## shell: start a shell in the development container
 .PHONY: shell
