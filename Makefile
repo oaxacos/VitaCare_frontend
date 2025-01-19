@@ -10,9 +10,9 @@ help:
 dev:
 	pnpm dev
 
-## init: initialize the project
-.PHONY: init
-init:
+## install: install the project dependencies
+.PHONY: install
+install:
 	pnpm install
 
 ## build: build the project
