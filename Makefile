@@ -1,3 +1,6 @@
+ifndef VERBOSE
+	MAKEFLAGS += --no-print-directory
+endif
 
 ## help: print this help message
 .PHONY: help
